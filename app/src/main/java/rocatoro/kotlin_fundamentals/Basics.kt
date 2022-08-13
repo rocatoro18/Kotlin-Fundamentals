@@ -16,7 +16,7 @@ fun main(){
     val name = "Roberto"
     // type int
     var myAge = 22
-    print("Hello " + myName)
+    println("Hello " + myName)
 
     // Integer Types: Byte (8 bit), Short (16 bit),
     // Int (32 bit), Long (64 bit)
@@ -28,5 +28,23 @@ fun main(){
     // Floating point number Types: Float (32 bit), Double (64 bit)
     val myFloat: Float = 18.11f
     val myDouble: Double = 3.14178582342
+
+    // Booleans are used to represent logical values
+    // It can have two possible values (true/false)
+    var isSunny: Boolean = true
+    isSunny = false
+
+    // Characters
+    val letterChar = 'A'
+    val digitChar = '1'
+
+    var myNamee = "Carlos"
+    var firstCharacter = myNamee[0]
+    var lastCharacter = myNamee[myNamee.length-1]
+
+    println("First character $firstCharacter, and the lenght of the str is ${myNamee.length}")
+
+    println("Last character $lastCharacter")
+
 
 }
