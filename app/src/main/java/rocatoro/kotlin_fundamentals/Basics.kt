@@ -212,4 +212,77 @@ fun main(){
         y++
     }while(y <= 10)
     println("do while loop is done")
+
+    var feltTemperature = "Cold"
+    var roomTemperature = 10
+
+    while (feltTemperature == "Cold") {
+        roomTemperature++
+        if (roomTemperature >= 20) {
+            feltTemperature = "Comfy"
+            println("It's comfy now")
+        }
+    }
+
+    println("--------for-----------")
+    // For Loop
+    // A for-loop is used to iterate through ranges, arrays, collections, or anything
+    for(num in 1..10){
+        println("$num")
+    }
+
+    // infix notation
+    for( i in 1 until 10){ // same as for(i in 1.until(10))
+        println("$i")
+    }
+
+    for(x in 10 downTo 1){
+        println("$x")
+    }
+
+    for(x in 10 downTo 1 step 2){ // same as for(i in 10.downTo(1).step(2))
+        println("$x")
+    }
+
+    println("Loops exercises")
+
+    for (x in 1..10000){
+        if(x == 9001)
+            println("IT'S OVER 9000 - $x")
+    }
+
+    var humidity = "humid"
+    var humidityLevel = 80
+    println("----------")
+    while (humidity != "comfy"){
+        humidityLevel -= 5
+        println("humidity decreased")
+        if(humidityLevel < 60){
+            println("It's comfy now")
+            println("$humidityLevel")
+            humidity = "comfy"
+        }
+    }
+
+    println("--------------------")
+
+    for (i in 1 until 20){
+        print("$i ")
+        if(i/2 == 5){
+            break
+        }
+    }
+    println("Done with the loop")
+
+    for (i in 1 until 20){
+        // 10 / 2 = 5
+            // 11 / 2 = 5.5 which is 5 in term of an int
+        if(i/2 == 5){
+            continue
+        }
+        print("$i ")
+    }
+    println("Done with the loop")
+
+
 }
