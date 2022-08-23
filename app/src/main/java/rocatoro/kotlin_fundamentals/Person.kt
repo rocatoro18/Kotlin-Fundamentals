@@ -1,5 +1,7 @@
 package rocatoro.kotlin_fundamentals
 
+import java.lang.IllegalArgumentException
+
 fun main(){
     // Creating instances of classes
     var Roberto = Person("Roberto","Torres",22)
@@ -13,8 +15,15 @@ fun main(){
     var iphone = MobilePhone("IOS","APPLE","IPHONE14")
     var phone2 = MobilePhone("ANDROID","SAMSUNG","GALAXY20")
     var iphone3 = MobilePhone("IOS","APPLE","IPHONE12")
-
     myFunction2(5)
+
+    var myCar = Car()
+    myCar.owner
+    myCar.maxSpeed = 200
+
+    println("Brand is: ${myCar.myBrand}")
+    println("Max Speed: ${myCar.maxSpeed}")
+    println("My Model is: ${myCar.myModel}")
 
 }
 
@@ -63,5 +72,37 @@ class MobilePhone (osName: String, brand: String, model: String){
             "osName = $osName, brand = $brand, model = $model"
         )
     }
+
+}
+
+class Car(){
+    // lateinit is for initialize variable later
+    lateinit var owner: String
+
+    val myBrand = "Mercedes Benz"
+        // Custom getter
+    get(){
+        return field.lowercase()
+    }
+
+    var maxSpeed: Int = 250
+        set(value) {if (value > 0) value else throw IllegalArgumentException("Max Speed cannot be less than 0")}
+    /* redundant get and setter
+        get(){
+        return field
+        } set(value) {
+        field = value
+        }
+    */
+
+    var myModel: String = "GLE63AMG"
+    private set
+
+
+    init {
+        this.myModel = "GLE62AMG"
+        this.owner = "Carlos"
+    }
+
 
 }
